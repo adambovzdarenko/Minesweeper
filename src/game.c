@@ -25,6 +25,14 @@ void run_game(int difficulty) {
     run_game_custom(rows, cols, mines);
 }
 
+void clear_console() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
 void run_game_custom(int rows, int cols, int mines) {
     Board *board = create_board(rows, cols, mines);
     int first_move = 1;
@@ -32,6 +40,7 @@ void run_game_custom(int rows, int cols, int mines) {
     int won = 0;
 
     while (!game_over) {
+        clear_console();
         print_board(board);
         char command;
         int row, col;
@@ -55,7 +64,7 @@ void run_game_custom(int rows, int cols, int mines) {
             }
         }
     }
-
+    clear_console();
     print_board(board);
     if (won) {
         printf("Congratulations! You won!\n");
