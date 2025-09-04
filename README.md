@@ -89,7 +89,7 @@ Expected Result: Test passed: toggle_flag
 
 - Dynamic column alignment for boards >9 columns: Used maximum digit calculation and %*d formatting in print_board.
 
-##Conclusions:
+## Conclusions:
 
 - Modular design improves maintainability and extendibility.
 
